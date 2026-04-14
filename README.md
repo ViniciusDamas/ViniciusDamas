@@ -12,7 +12,7 @@ The result is a memory system that becomes *more useful* the longer it runs, not
 
 #### Highlights
 
-- **95.4% on LoCoMo** (LLM-judge, gpt-4o-mini answerer) — competitive with reported SOTA on long-term conversational memory.
+- **90.3% on LoCoMo** (10-conversation aggregated, gpt-4o-mini judge) — **+8.3pp above prior reported SOTA** (Memori 82%, ECAI 2025) under matched evaluation protocol.
 - **Dual-pathway consolidation** — slow-wave (SWS) replay for assimilation + REM-like creative recombination for cross-domain links. Both implemented, both ablated.
 - **Cross-domain discovery** — surfaces structural analogies between physics, biology, economics that flat-RAG baselines never produce.
 - **Hebbian retrieval-time edge reinforcement** — first known LLM memory system applying *neurons-that-fire-together-wire-together* during query, not training.
