@@ -1,45 +1,46 @@
 ### Hi, I'm Vini
 
-AI researcher building memory systems for LLM agents — inspired by how brains consolidate knowledge during sleep.
+Building **DREAM** — a memory layer for AI agents and researchers that consolidates knowledge instead of just retrieving it.
+
+Patent pending — USPTO #64/013,667.
 
 ---
 
-#### DREAM — sleep-inspired memory consolidation
+#### The problem
 
-LLMs forget. Most "memory" systems are just retrieval over a flat buffer. DREAM is different: it consolidates memories through a *sleep* cycle that mirrors how the human brain processes the day's experiences — extracting structure, resolving contradictions, and discovering analogies across domains.
+LLMs forget. Most "memory" systems are flat retrieval — every session starts cold and accumulated context evaporates at every context-window edge.
 
-The result is a memory system that becomes *more useful* the longer it runs, not just larger.
+For researchers, this is the central bottleneck: the cost of *re-discovering what you already knew* compounds with project age.
 
-#### Highlights
+#### The thesis
 
-- **90.3% on LoCoMo** (10-conversation aggregated, gpt-4o-mini judge) — **+8.3pp above prior reported SOTA** (Memori 82%, ECAI 2025) under matched evaluation protocol.
-- **Dual-pathway consolidation** — slow-wave (SWS) replay for assimilation + REM-like creative recombination for cross-domain links. Both implemented, both ablated.
-- **Cross-domain discovery** — surfaces structural analogies between physics, biology, economics that flat-RAG baselines never produce.
-- **Hebbian retrieval-time edge reinforcement** — first known LLM memory system applying *neurons-that-fire-together-wire-together* during query, not training.
-- **Patent pending** — USPTO #64/013,667 (filed March 2026).
+A memory system should get **more useful** the longer it runs, not just larger.
+
+DREAM borrows from how the brain consolidates experience during sleep: episodic memories enter a fast store, then a periodic offline cycle organizes them, surfaces contradictions, builds emergent structure, and selectively forgets noise. What you query weeks later isn't a transcript — it's a coherent knowledge layer.
+
+#### What's shipped
+
+- **`dream-api`** — production backend on HF Spaces. EU AI Act Article 12 compliant by architecture (full audit trail + per-memory provenance).
+- **MCP server** — DREAM works as long-term memory backend for Claude Code, Claude Desktop, and any MCP-compatible client.
+- **REST API** — OpenAPI/Swagger documented.
+- **`dream-visual`** — Three.js visualization of the consolidation cycle, plus an early researcher-tool prototype at `/research`.
+- **Dogfooded** — I use DREAM to build DREAM.
 
 #### What I'm working on now
 
-Preparing a NeurIPS/ICLR submission with **SCHEMA** — a 225-question benchmark across 9 cognitive categories (cross-domain connection, abstraction, counterfactual reasoning, selective forgetting, interference, temporal reasoning, multi-hop, retention, adversarial abstention). The four most-claimed memory abilities aren't covered together by any existing benchmark; SCHEMA is.
+A polished researcher tool (codename **memex**) — the SaaS surface for the long-term memory layer, built on `dream-api`. Active roadmap focuses on document ingestion, retrieval-quality upgrades, and a researcher-grade UX.
 
-In flight:
-- External baselines (Mem0, HippoRAG) under apples-to-apples protocol.
-- 3-judge triangulation (GPT-4o-mini + Gemini 2.5 Flash + Claude Haiku 4.5) to defuse self-preference bias.
-- Human anchor validation with Fleiss κ pre-registered thresholds.
-- Pre-registered hypothesis database (every change auditable, Kapoor 2023 immune).
+#### Numbers
 
-#### MCP integration
-
-DREAM ships as a [Model Context Protocol](https://modelcontextprotocol.io) server — it works as a long-term memory backend for Claude Code, Claude Desktop, and any MCP-compatible client. Talk to it like a normal AI; it remembers, consolidates, and connects what you say across sessions.
+**90.3% on LoCoMo** (10-conversation aggregated, gpt-4o-mini judge).
 
 #### Tech
 
-`Python` · `ChromaDB` · `NetworkX` · `DeBERTa NLI` · `nomic-embed` · `FSRS` · `gpt-4o-mini` · `MCP` · `Three.js`
+`Python` · `MCP` · `FastAPI` · `ChromaDB` · `Three.js` · hosted on HuggingFace Spaces PRO.
 
 #### Links
 
-- Paper: *coming soon on arXiv (cs.AI)*
-- 3D brain visualization (Three.js): [docs/prototype/](docs/prototype/)
+- DREAM Visual: https://vinelima-dream-visual.hf.space
 
 ---
 
