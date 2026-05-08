@@ -28,7 +28,7 @@ DREAM borrows from how the brain consolidates experience during sleep: episodic 
 
 #### What I'm working on now
 
-A polished researcher tool (codename **memex**) — the SaaS surface for the long-term memory layer, built on `dream-api`. Active roadmap focuses on document ingestion, retrieval-quality upgrades, and a researcher-grade UX.
+A polished researcher tool (codename **Mnemic**) — the SaaS surface for the long-term memory layer, built on `dream-api`. Active roadmap focuses on document ingestion, retrieval-quality upgrades, and a researcher-grade UX.
 
 #### Numbers
 
